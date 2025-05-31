@@ -8,33 +8,40 @@ body {
   position: relative;
   width: 1920px;
   height: 1080px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Arkanoid_(arcade).png') center/cover no-repeat;
+  background: linear-gradient(135deg, #0f052c 0%, #1a0a3c 60%, #2d1e5a 100%), url('arcade.png') center/cover no-repeat;
   overflow: hidden;
+}
+.overlay::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 800px;
+  height: 800px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #00fff7 0%, rgba(0,0,0,0) 70%);
+  opacity: 0.3;
+  filter: blur(80px);
+  z-index: 0;
 }
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0.7) 100%);
   opacity: 0.7;
   z-index: 1;
 }
-.main-info {
-  position: absolute;
-  left: 100px;
-  top: 270px;
-  z-index: 2;
-  width: 960px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.main-info, .page-tabs, .age-rating {
+  text-shadow: 0 0 16px #00fff7, 0 0 32px #ff00de;
 }
-.game-title {
-  font-family: 'Signika', Arial, sans-serif;
-  font-size: 64px;
-  font-weight: 400;
-  margin: 0;
+.btn.buy.selected {
+  box-shadow: 0 0 24px 8px #00fff7, 0 0 48px 16px #ff00de;
+  background: linear-gradient(90deg, #00fff7 0%, #ff00de 100%);
+  color: #fff;
+  border: none;
 }
+/* 이하 기존 스타일 유지 */
 .subheader {
   display: flex;
   align-items: center;
@@ -99,14 +106,6 @@ body {
   min-width: 96px;
   min-height: 48px;
   transition: box-shadow 0.2s;
-}
-.btn.selected {
-  box-shadow: 0 0 15px 4px #fff, 0 0 0 8px #fff, 0 0 0 4px #000;
-  background: #2C2E30;
-}
-.btn.choose {
-  color: #C6C6C6;
-  background: #2C2E30;
 }
 .btn .price, .btn .see-all {
   font-size: 18px;
