@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  background: #181818;
+  color: #FEFCFE;
+}
+.background {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0) 100%);
+  opacity: 0.7;
+  z-index: 1;
+}
+.main-info {
+  position: absolute;
+  left: 100px;
+  top: 270px;
+  z-index: 2;
+  width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.game-title {
+  font-family: 'Signika', Arial, sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  margin: 0;
+}
+.subheader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #C6C6C6;
+}
+.subheader .divider {
+  width: 8px;
+  height: 8px;
+  background: #C6C6C6;
+  border-radius: 2px;
+  display: inline-block;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stars {
+  color: #C6C6C6;
+  font-size: 24px;
+}
+.stars .filled {
+  color: #C6C6C6;
+}
+.stars .star {
+  color: #C6C6C6;
+  opacity: 0.5;
+}
+.score {
+  font-size: 30px;
+  font-weight: 600;
+  color: #C6C6C6;
+  margin-left: 12px;
+}
+.description {
+  font-size: 24px;
+  font-weight: 500;
+  color: #FEFCFE;
+  width: 960px;
+  margin: 0;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+}
+.btn {
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  padding: 12px 24px;
+  cursor: pointer;
+  background: #2C2E30;
+  color: #FEFCFE;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 96px;
+  min-height: 48px;
+  transition: box-shadow 0.2s;
+}
+.btn.selected {
+  box-shadow: 0 0 15px 4px #fff, 0 0 0 8px #fff, 0 0 0 4px #000;
+  background: #2C2E30;
+}
+.btn.choose {
+  color: #C6C6C6;
+  background: #2C2E30;
+}
+.btn .price, .btn .see-all {
+  font-size: 18px;
+  font-weight: 500;
+  color: #FEFCFE;
+  opacity: 0.7;
+}
+.btn .see-all {
+  color: #C6C6C6;
+}
+.btn.icon {
+  font-size: 32px;
+  background: #2C2E30;
+  color: #C6C6C6;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+.page-tabs {
+  position: absolute;
+  left: 100px;
+  top: 946px;
+  display: flex;
+  gap: 40px;
+  z-index: 2;
+}
+.tab {
+  font-size: 34px;
+  font-weight: 500;
+  color: #8F8F8F;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s, color 0.2s;
+}
+.tab.selected {
+  color: #8F8F8F;
+  opacity: 1;
+}
+.page-markers {
+  position: absolute;
+  left: 58px;
+  top: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+.marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8F8F8F;
+  opacity: 0.5;
+}
+.marker.selected {
+  background: #FEFCFE;
+  opacity: 1;
+}
+.age-rating {
+  position: absolute;
+  left: 717px;
+  top: 881px;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  width: 1096px;
+  z-index: 2;
+}
+.pegi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2C2E30;
+  border: 2px solid #FEFCFE;
+  width: 80px;
+  padding: 4px;
+}
+.pegi-box {
+  background: #DABE5C;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pegi-age {
+  font-size: 44px;
+  font-weight: 900;
+  color: #FEFCFE;
+  text-align: center;
+}
+.pegi-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #FEFCFE;
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+.age-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+}
+.age-text .pegi16 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #FEFCFE;
+  text-align: right;
+}
+.age-text .violence {
+  font-size: 20px;
+  font-weight: 500;
+  color: #C6C6C6;
+  text-align: right;
+}
+.age-text .divider {
+  width: 112px;
+  height: 1px;
+  background: #8F8F8F;
+  margin: 8px 0;
+}
+.age-text .xbox-live {
+  font-size: 20px;
+  font-weight: 500;
+  color: #C6C6C6;
+  text-align: right;
+}
