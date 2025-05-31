@@ -1,15 +1,21 @@
 body {
   margin: 0;
-  font-family: 'Noto Sans', Arial, sans-serif;
+  min-height: 100vh;
   background: #181818;
   color: #FEFCFE;
+  font-family: 'Noto Sans', Arial, sans-serif;
 }
 .background {
-  position: relative;
-  width: 1920px;
-  height: 1080px;
+  min-height: 100vh;
+  width: 100vw;
   background: linear-gradient(135deg, #0f052c 0%, #1a0a3c 60%, #2d1e5a 100%), url('arcade.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   overflow: hidden;
+  padding: 40px 0;
 }
 .overlay::before {
   content: '';
@@ -32,23 +38,32 @@ body {
   opacity: 0.7;
   z-index: 1;
 }
-.main-info, .page-tabs, .age-rating {
-  text-shadow: 0 0 16px #00fff7, 0 0 32px #ff00de;
+.main-info {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 2;
+  background: rgba(20,10,40,0.7);
+  border-radius: 24px;
+  padding: 48px 32px;
+  box-shadow: 0 0 32px #00fff7, 0 0 48px #ff00de;
+  text-align: center;
 }
-.btn.buy.selected {
-  box-shadow: 0 0 24px 8px #00fff7, 0 0 48px 16px #ff00de;
-  background: linear-gradient(90deg, #00fff7 0%, #ff00de 100%);
-  color: #fff;
-  border: none;
+.game-title {
+  font-family: 'Signika', Arial, sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  margin: 0 0 16px 0;
 }
-/* 이하 기존 스타일 유지 */
 .subheader {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   font-size: 30px;
   font-weight: 600;
   color: #C6C6C6;
+  margin-bottom: 24px;
 }
 .subheader .divider {
   width: 8px;
@@ -83,13 +98,14 @@ body {
   font-size: 24px;
   font-weight: 500;
   color: #FEFCFE;
-  width: 960px;
-  margin: 0;
+  margin: 0 0 32px 0;
 }
 .buttons {
   display: flex;
   gap: 20px;
+  justify-content: center;
   margin-top: 24px;
+  flex-wrap: wrap;
 }
 .btn {
   border: none;
@@ -102,10 +118,16 @@ body {
   font-weight: 600;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   min-width: 96px;
   min-height: 48px;
   transition: box-shadow 0.2s;
+}
+.btn.buy.selected {
+  box-shadow: 0 0 24px 8px #00fff7, 0 0 48px 16px #ff00de;
+  background: linear-gradient(90deg, #00fff7 0%, #ff00de 100%);
+  color: #fff;
+  border: none;
 }
 .btn .price, .btn .see-all {
   font-size: 18px;
@@ -127,13 +149,17 @@ body {
   justify-content: center;
   opacity: 0.6;
 }
+.page-tabs, .age-rating {
+  max-width: 900px;
+  width: 90%;
+  margin: 32px auto 0 auto;
+  z-index: 2;
+  text-align: center;
+}
 .page-tabs {
-  position: absolute;
-  left: 100px;
-  top: 946px;
   display: flex;
   gap: 40px;
-  z-index: 2;
+  justify-content: center;
 }
 .tab {
   font-size: 34px;
@@ -148,12 +174,11 @@ body {
   opacity: 1;
 }
 .page-markers {
-  position: absolute;
-  left: 58px;
-  top: 46px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 4px;
+  justify-content: center;
+  margin: 24px 0 0 0;
   z-index: 2;
 }
 .marker {
@@ -168,14 +193,11 @@ body {
   opacity: 1;
 }
 .age-rating {
-  position: absolute;
-  left: 717px;
-  top: 881px;
   display: flex;
   align-items: flex-start;
   gap: 32px;
-  width: 1096px;
-  z-index: 2;
+  justify-content: center;
+  margin-bottom: 32px;
 }
 .pegi {
   display: flex;
@@ -236,4 +258,26 @@ body {
   font-weight: 500;
   color: #C6C6C6;
   text-align: right;
+}
+@media (max-width: 600px) {
+  .main-info, .page-tabs, .age-rating {
+    max-width: 100vw;
+    width: 98vw;
+    padding: 16px 4px;
+  }
+  .game-title {
+    font-size: 36px;
+  }
+  .subheader {
+    font-size: 18px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .btn {
+    font-size: 16px;
+    min-width: 60px;
+    min-height: 32px;
+    padding: 8px 12px;
+  }
 }
